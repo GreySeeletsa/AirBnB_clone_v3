@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" holds the class User"""
+""" holds class User"""
 import models
 from models.base_model import BaseModel, Base
 from os import getenv
@@ -9,7 +9,7 @@ from sqlalchemy.orm import relationship
 
 
 class User(BaseModel, Base):
-    """The representation of the user """
+    """Representation of a user """
     if models.storage_t == 'db':
         __tablename__ = 'users'
         email = Column(String(128), nullable=False)
@@ -25,5 +25,5 @@ class User(BaseModel, Base):
         last_name = ""
 
     def __init__(self, *args, **kwargs):
-        """initializes the user"""
+        """initializes user"""
         super().__init__(*args, **kwargs)
